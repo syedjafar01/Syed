@@ -1,0 +1,8 @@
+- learned how to send mail using MAILTO command
+- learned about lynis tool
+- learned how we can increase the security by solving the suggestions from lynis
+- learned how ssh works
+- installed ssh server
+- learned how to config ssh
+- learned how to send id_ssh.pub file through scp command
+- able to access the server through ssh

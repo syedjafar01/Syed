@@ -1,0 +1,11 @@
+- learned about tar command with all its options
+- learned how to zip and unzip a complete directory containing all its files and subfolders along with retainingn its permissions
+- learned how to extract a zip file to a particular destination using -C option of tar
+- learned how to use while and for loops in shell scripts
+- learned how to use if , else in shell scripts
+- completed question 1 of Assignment_2
+- learned how to backup a folder or file
+- learned how to use sort command
+- learned how extract part of an output
+- learned how to delete a file using interaction way
+- partially completed question 2 of Assignment_2 

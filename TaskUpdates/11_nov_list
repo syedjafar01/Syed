@@ -1,0 +1,17 @@
+- about git
+- how to install git
+- what are git commands 
+  https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+- difference between git and github
+- difference between git and svn
+- centralised vs distributed version control
+- played with some git commands 
+  master branch, created a file_1 in master branch, added branches to master branch, edited the file_1 in branch,
+  tried to pull the repository and get conflicts, then checked the conflicts (diff) and finally commit and pull.
+- also installed gitk
+- clear view of master branch and other branched along with the tag i have added and the commit message can be seen.
+- learned about hard and soft reset commands.
+- learned about git clone command and pull command.
+   
+   
+   http://rogerdudler.github.io/git-guide/

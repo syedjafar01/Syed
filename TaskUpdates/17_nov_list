@@ -1,0 +1,11 @@
+- understood about linux FileSystem
+- learned different basic linux Commands
+- played with the commands on the Terminal
+- went through grep,sed,awk pattern matching commands
+- learned netstat command with all,tcp,udp options
+- learned how to switch between directories
+- learned how to create and delete directories and files
+- learned to change file permissions 
+- learned how to make a shell script
+- created a sample shell script which prints "hello world" as the output
+- run the shell script program using sh command

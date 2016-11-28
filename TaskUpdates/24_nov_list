@@ -1,0 +1,6 @@
+- learned how to find the path to specific command
+- learned how to set sudoers using visudo
+- learned how to set permissions for different users to execute particular commands using sudo previliage
+- also learned about setting "password request [Y/N]" for sudo users
+- installed tiger-Security tool
+- learned how tiger works and where the log file is created of the audit scan

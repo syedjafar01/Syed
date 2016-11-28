@@ -1,0 +1,14 @@
+- learned how to use java programs on terminal
+- created a java demo program
+- compiled the demo program using [javac <file_name>]  command, successfully
+- run the program using [java <file_name>] command, successfully
+- learned about using Mysql on terminal
+- learned different commands in mysql like:show databases, use <database_name>, show tables, create, insert, select, delete..etc
+- created a new database
+- created a new table
+- inserted values into the table
+- get the values from the table
+- downloaded and installed intellij idea
+- learned how to create project, class
+- learned how to integrate github with intellij idea
+- learned how to use terminal on intellij idea
