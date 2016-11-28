@@ -1,0 +1,32 @@
+Documentation on Tiger (open source tool for performing security auditing):
+
+Tiger is a security tool that can be use both as a security audit and intrusion detection system.
+
+
+--> installing tiger
+$ sudo apt-get install tiger
+
+>tripwire configuration
+>set site-key 
+>set local-key
+
+--> to run tiger
+$ sudo tiger
+
+--> meanwhile we can check the log file by going to path
+/var/log/tiger/<file.report>
+
+--> creating a cronjab using MAILTO= command to send the mail of tiger log file
+
+$ sudo crontab -e
+
+>crontab is opened in selected editor
+>add MAILTO=<Ur mail address>
+>add 0 12 */2 * * /usr/sbin/tiger
+>ctrl+x and press y and enter
+
+---> To check the crontab list
+$ sudo crontab -l
+
+--> To remove cronjob
+$ sudo crontab -r

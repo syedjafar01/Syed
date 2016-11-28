@@ -1,0 +1,21 @@
+Documentation on lynis (open source tool for security auditing):
+
+Lynis is a security auditing for UNIX derivatives like Linux, macOS, BSD, and others. It performs an in-depth security scan and runs on the system itself. The primary goal is to test security defenses and provide tips for further system hardening. It will also scan for general system information, vulnerable software packages, and possible configuration issues.
+
+--> First we need to clone the git repository from Github
+$ git clone https://github.com/CISOfy/lynis.git
+
+--> Go to the /path/to/lynis
+--> run lynis shell script
+$ ./lynis
+
+-->it will show the lynis details
+
+--> again run the script with passing arguments audit and system
+$ ./lynis audit system
+
+--> It will scan the whole system and provide all the details along with warnings and suggesstions if any.
+
+--> solved updating the packges
+--> solved upgrading the packages
+--> solved purging the unwanted temp files

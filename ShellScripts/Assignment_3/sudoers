@@ -1,0 +1,19 @@
+#to create user
+sudo useradd <username> -m -s /bin/bash -g users
+
+#to set password
+sudo passwd <username>
+
+#to switch the user
+sudo su - <username>
+
+#to get the path of command
+which <command>
+
+#to set sudoers from root only
+open visudo
+edit the file by adding premissions as following format
+<username> ALL=(ALL) path/to/command
+
+#for not asking password
+<username> ALL=(ALL) NOPASSWD: path/to/command
