@@ -1,0 +1,93 @@
+import java.util.*;
+
+/**
+ * Created by syedjafar on 30/11/16.
+ */
+public class Points {
+
+    public static void main(String[] args) {
+
+
+        Scanner in = new Scanner(System.in);
+        int i, j, m;
+        System.out.println("enter the size of matrix: ");
+        m = in.nextInt();
+        int a[][] = new int[m][2];
+        for (i = 0; i < m; i++) {
+            for (j = 0; j < 2; j++) {
+                a[i][j] = (int) (Math.random() * 10);
+
+            }
+        }
+
+        for (i = 0; i < m; i++) {
+            for (j = 0; j < 2; j++) {
+                System.out.print(a[i][j] + " ");
+            }
+            System.out.println(" ");
+
+        }
+
+
+        System.out.println("enter the key value ");
+
+        int key = in.nextInt();
+        int x1 = a[key][0];
+        int y1 = a[key][1];
+        int x2,y2;
+        double d;
+        double[] b = new double[m];
+
+
+        for (j=0;j<m;j++) {
+            x2 = a[j][0];
+            y2 = a[j][1];
+            d = Math.sqrt(Math.pow((x2-x1),2) + Math.pow((y2-y1),2));
+            b[j] = d;
+
+        }
+
+
+        for (i=0;i<m;i++) {
+            //System.out.println(i);
+            System.out.println("d: " + b[i]);
+        }
+        double[] c = new double[m];
+
+
+        for (i=0;i<m;i++) {
+            c[i] = b[i];
+        }
+
+        Arrays.sort(c);
+        for (i=0;i<m;i++) {
+
+            System.out.println("c: " + c[i]);
+        }
+
+        Set s = new LinkedHashSet();
+        for (i=0;i<m;i++) {
+
+            s.add(c[i]);
+
+        }
+
+        Object[] arr = new Object[s.size()];
+
+        s.toArray(arr);
+        System.out.println("uneque ele : " + arr.length);
+
+        System.out.println("enter how many points: ");
+        int count = in.nextInt();
+
+        outer: for (i=1;i<=count;i++) {
+            for (j = 0; j < m; j++) {
+                if ((double)arr[i] == b[j]) {
+
+                    System.out.println("points are : ("+ a[j][0] + " " + a[j][1] + ")" ); continue outer;
+                }
+            }
+        }
+
+    }
+}
