@@ -1,0 +1,169 @@
+import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * Created by syedjafar on 7/12/16.
+ */
+
+
+public class SnakeAndLadder {
+
+
+    public static int[] createBoard()
+    {
+        int[] cell = new int[31];
+        for (int i=0;i<31;i++)
+        {
+            cell[i] = -1;
+        }
+
+        // Ladders
+        cell[3] = 22;
+        cell[5] = 8;
+        cell[11] = 26;
+        cell[20] = 29;
+
+        return cell;
+    }
+
+
+    public static void NumberOfSnakesAndLadders() {
+
+        int N=31;
+        int[] cell =new int[N];
+        cell = createBoard();
+
+        // Snakes
+        cell[27] = 1;
+        cell[21] = 9;
+        cell[19] = 7;
+        cell[17] = 4;
+
+
+        int i, c1 = 0,c2 = 0;
+        for (i=1;i<N;i++) {
+            if ((cell[i] != -1) && (cell[i] < i)) {
+                c1++;
+            }
+            if ((cell[i] != -1) && (cell[i] > i)) {
+                c2++;
+            }
+        }
+        System.out.println("No of snakes : " + c1);
+        System.out.println("No of ladders : " + c2);
+
+    }
+
+
+    static class QueueEntry {
+        int Vertex;
+        int steps;
+    };
+
+    static int MinNoOfMoves(int from, int to) {
+
+        int[] cell = new int[to+1];
+        cell = createBoard();
+
+        boolean[] visited = new boolean[31];
+        for (int i = 1; i < 31; i++) {
+            visited[i] = false;
+        }
+
+        Queue<QueueEntry> q = new LinkedList<QueueEntry>();
+
+        visited[1] = true;
+        QueueEntry s = new QueueEntry();
+        s.Vertex = from;
+        s.steps = 0;
+        q.add(s);
+
+        QueueEntry qe = new QueueEntry();
+
+        while (!q.isEmpty()) {
+
+            qe = q.peek();
+            int vertex = qe.Vertex;
+
+            if (vertex == to) {
+                break;
+            }
+
+            q.remove();
+
+            for (int i = vertex + 1; i <= (vertex + 6) && i <= to; ++i) {
+
+                if (visited[i] == false) {
+
+                    QueueEntry a = new QueueEntry();
+                    a.steps = (qe.steps + 1);
+                    visited[i] = true;
+                    if (cell[i] != -1) {
+
+                        a.Vertex = cell[i];
+
+                    } else {
+
+                        a.Vertex = i;
+
+                    }
+                    q.add(a);
+                }
+            }
+        }
+        return qe.steps;
+    }
+
+    public static int minNoOfMovesAfterOneSnakebite()
+    {
+        int k=0;
+        int[] snkHd = new int[4];
+        int[] snkTl = new int[4];
+        int[] Array1 = new int[4];
+        int[] Array2 = new int[4];
+        int[] sumArray = new int[4];
+
+        //snake head position
+        snkHd[0] = 17;
+        snkHd[1] = 19;
+        snkHd[2] = 21;
+        snkHd[3] = 27;
+
+        //snake tail position
+        snkTl[0] = 4;
+        snkTl[1] = 7;
+        snkTl[2] = 9;
+        snkTl[3] = 1;
+
+        while(k<4)
+        {
+            Array1[k] = MinNoOfMoves(0 , snkHd[k]);
+            Array2[k] = MinNoOfMoves(snkTl[k]-1 ,30);
+            k++;
+        }
+        for (int i =0; i<4;i++)
+        {
+            sumArray[i] = Array1[i] + Array2[i];
+        }
+
+        Arrays.sort(sumArray);
+        return sumArray[0];
+
+
+
+    }
+
+
+
+
+
+    public static void main(String[] args)
+    {
+
+        NumberOfSnakesAndLadders();
+        System.out.println("Min number of steps required are : " + MinNoOfMoves(0, 30) );
+        System.out.println("Minimum number of steps with one snake bite : "+ minNoOfMovesAfterOneSnakebite());
+    }
+
+}
